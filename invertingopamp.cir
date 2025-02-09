@@ -1,0 +1,11 @@
+.title KiCad schematic
+v2 Net-_v2-Pad1_ GND 15
+Rf1 Net-_R2-Pad2_ output 5k
+U1 input plot_v1
+R2 input Net-_R2-Pad2_ 1k
+v1 input GND sine
+X1 Net-_X1-Pad1_ Net-_R2-Pad2_ GND Net-_v3-Pad1_ Net-_X1-Pad5_ output Net-_v2-Pad1_ unconnected-_X1-Pad8_ lm_741
+U2 output plot_v1
+Rl1 GND output 5k
+v3 Net-_v3-Pad1_ GND -15
+.end

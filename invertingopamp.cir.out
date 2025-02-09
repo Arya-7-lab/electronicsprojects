@@ -1,0 +1,23 @@
+.title kicad schematic
+
+.include lm_741.sub
+v2 net-_v2-pad1_ gnd 15
+rf1 net-_r2-pad2_ output 5k
+* u1 input plot_v1
+r2 input net-_r2-pad2_ 1k
+v1 input gnd sine(0 2 50 0 0)
+x1 net-_x1-pad1_ net-_r2-pad2_ gnd net-_v3-pad1_ net-_x1-pad5_ output net-_v2-pad1_ unconnected-_x1-pad8_ lm_741
+* u2 output plot_v1
+rl1 gnd output 5k
+v3 net-_v3-pad1_ gnd -15
+.tran 100e-06 100e-03 0e-03
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(input)
+plot v(output)
+.endc
+.end
